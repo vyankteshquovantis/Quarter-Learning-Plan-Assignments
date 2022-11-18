@@ -1,1 +1,1 @@
-This is the readme file of master branch
+This branch contains all the assignments of section 2
