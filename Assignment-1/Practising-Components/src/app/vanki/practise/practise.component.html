@@ -1,2 +1,3 @@
-<h1>this is practise component</h1>
-<input type="text" [(ngModel)]="myInputText">
+<h1>this is practise component and the value of below text input box is {{myInputText}}</h1>
+<input type="text" [(ngModel)]="myInputText" [readOnly]="readonly">
+<button (mouseover)="onMouseHover()">modify input area</button>

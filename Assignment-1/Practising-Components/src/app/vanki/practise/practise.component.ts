@@ -8,11 +8,22 @@ import { Component } from "@angular/core";
 
 export class PractiseComponent{
     myInputText:string='';
+    readonly = false;
     constructor(){
-        setTimeout(()=>{
-            this.myInputText = "it got filled";
-        },5000);
+        
     }
 
+    onMouseHover(){
+        this.myInputText = 'Mouse was hoverd';
+        this.readonly = true;
+        this.resetInputValue();
+    }
+
+    resetInputValue(){
+        setTimeout(()=>{
+            this.myInputText = "it got filled";
+            this.readonly = false;
+        },5000);
+    }
     
 }
