@@ -7,23 +7,30 @@ import { Component } from "@angular/core";
 })
 
 export class PractiseComponent{
-    myInputText:string='';
+    practiseDetails:string='';
+    practiseList:string[]=[];
+    
     readonly = false;
     constructor(){
         
     }
 
     onMouseHover(){
-        this.myInputText = 'Mouse was hoverd';
+        this.practiseDetails = 'Mouse was hoverd';
         this.readonly = true;
         this.resetInputValue();
     }
 
     resetInputValue(){
         setTimeout(()=>{
-            this.myInputText = "it got filled";
+            this.practiseDetails = "it got filled";
             this.readonly = false;
         },5000);
+    }
+
+    onPractiseAddClick(){
+        this.practiseList.push(this.practiseDetails);
+        this.practiseDetails = "";
     }
     
 }

@@ -1,3 +1,30 @@
-<h1>this is practise component and the value of below text input box is {{myInputText}}</h1>
-<input type="text" [(ngModel)]="myInputText" [readOnly]="readonly">
-<button (mouseover)="onMouseHover()">modify input area</button>
+<h1>
+  this is practise component and the value of below text input box is
+  {{ practiseDetails }}
+</h1>
+<input type="text" [(ngModel)]="practiseDetails" [readOnly]="readonly" />
+<p
+  *ngIf="practiseDetails === ''; else buttonEnableMessage"
+  [ngStyle]="{ backgroundColor: 'red' }"
+>
+  The button is disabled Because the input field is empty
+</p>
+<ng-template #buttonEnableMessage
+  ><p [ngStyle]="{ backgroundColor: 'green' }">
+    The button is not disabled Because the input field is not empty
+  </p></ng-template
+>
+<button
+  (click)="onPractiseAddClick()"
+  [disabled]="practiseDetails === ''"
+  class="oranngeColorTest"
+  [ngClass]="{ pinkColorTest: practiseDetails === '' }"
+>
+  Add practise details
+</button>
+
+<ul>
+  <li *ngFor="let practise of practiseList; let i = index">
+    {{ i + 1 }} {{ practise }}
+  </li>
+</ul>
